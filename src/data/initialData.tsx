@@ -90,3 +90,48 @@ export const initialDataProfiles = [
     marketplace: 'Rakuten',
   },
 ];
+
+export const initialDataCampaings = [
+  {
+    campaignId: 1,
+    clicks: 150,
+    cost: 75.5,
+    date: '2022-01-15',
+  },
+  {
+    campaignId: 2,
+    clicks: 200,
+    cost: 100.25,
+    date: '2022-01-16',
+  },
+  {
+    campaignId: 3,
+    clicks: 120,
+    cost: 60.75,
+    date: '2022-01-17',
+  },
+  {
+    campaignId: 4,
+    clicks: 180,
+    cost: 90.0,
+    date: '2022-01-18',
+  },
+  {
+    campaignId: 5,
+    clicks: 250,
+    cost: 125.75,
+    date: '2022-01-19',
+  },
+  {
+    campaignId: 6,
+    clicks: 300,
+    cost: 150.0,
+    date: '2022-01-20',
+  },
+  {
+    campaignId: 7,
+    clicks: 170,
+    cost: 85.5,
+    date: '2022-01-21',
+  },
+];

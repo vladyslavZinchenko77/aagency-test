@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Header from './components/Header';
 // import Accounts from './pages/Accounts';
-// import Campaigns from './pages/Campaigns';
-import Profiles from './pages/Profiles';
+import Campaigns from './pages/Campaigns';
+// import Profiles from './pages/Profiles';
 import Footer from './components/Footer';
 
 import './App.scss';
@@ -13,7 +13,8 @@ const App: FC = () => {
       <Header />
       <main>
         {/* <Accounts /> */}
-        <Profiles />
+        {/* <Profiles /> */}
+        <Campaigns />
       </main>
       <Footer />
     </>
