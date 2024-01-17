@@ -1,20 +1,22 @@
 import { FC } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-// import Accounts from './pages/Accounts';
+import Accounts from './pages/Accounts';
 import Campaigns from './pages/Campaigns';
-// import Profiles from './pages/Profiles';
+import Profiles from './pages/Profiles';
 import Footer from './components/Footer';
-
-import './App.scss';
 
 const App: FC = () => {
   return (
     <>
       <Header />
       <main>
-        {/* <Accounts /> */}
-        {/* <Profiles /> */}
-        <Campaigns />
+        <Routes>
+          <Route index element={<Accounts />} path="/" />
+          <Route element={<Accounts />} path="home" />
+          <Route element={<Profiles />} path="profile/:id" />
+          <Route element={<Campaigns />} path="/campaign" />
+        </Routes>
       </main>
       <Footer />
     </>

@@ -9,8 +9,8 @@ const Accounts: FC = () => {
     <DefaultPage title="Accounts">
       <TableCustom
         columns={columnsAcounts}
-        totalItems={initialDataAcounts.length}
         data={initialDataAcounts}
+        path="/profile/id"
       />
     </DefaultPage>
   );
