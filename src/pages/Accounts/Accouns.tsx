@@ -10,6 +10,7 @@ const Accounts: FC = () => {
       <TableCustom
         columns={columnsAcounts}
         data={initialDataAcounts}
+        isClicableRow={true}
         path="/profile/"
       />
     </DefaultPage>

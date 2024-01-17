@@ -23,6 +23,7 @@ const Profiles: FC = () => {
       <TableCustom
         columns={columnsProfiles}
         data={data}
+        isClicableRow={true}
         path="profile/campaign/"
       />
     </DefaultPage>
