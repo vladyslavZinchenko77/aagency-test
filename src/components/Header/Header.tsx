@@ -1,13 +1,14 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header: FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Logo
-        </a>
+        <Link className="navbar-brand" to={'/'}>
+          AAGENCY
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,14 +23,9 @@ const Header: FC = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={'/home'}>
                 Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Contacts
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
