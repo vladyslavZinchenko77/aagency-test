@@ -15,7 +15,10 @@ const App: FC = () => {
           <Route index element={<Accounts />} path="/" />
           <Route element={<Accounts />} path="home" />
           <Route element={<Profiles />} path="profile/:id" />
-          <Route element={<Campaigns />} path="/campaign" />
+          <Route
+            element={<Campaigns />}
+            path="profile/:id/profile/campaign/:id"
+          />
         </Routes>
       </main>
       <Footer />

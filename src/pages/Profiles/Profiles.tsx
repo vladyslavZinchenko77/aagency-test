@@ -20,7 +20,11 @@ const Profiles: FC = () => {
 
   return (
     <DefaultPage title={`Profiles of selected account ${id}`}>
-      <TableCustom columns={columnsProfiles} data={data} />
+      <TableCustom
+        columns={columnsProfiles}
+        data={data}
+        path="profile/campaign/"
+      />
     </DefaultPage>
   );
 };
