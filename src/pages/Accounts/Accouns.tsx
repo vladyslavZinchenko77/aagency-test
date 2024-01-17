@@ -10,7 +10,7 @@ const Accounts: FC = () => {
       <TableCustom
         columns={columnsAcounts}
         data={initialDataAcounts}
-        path="/profile/id"
+        path="/profile/"
       />
     </DefaultPage>
   );
