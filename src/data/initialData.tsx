@@ -110,6 +110,18 @@ export const initialDataProfiles = [
     country: 'Country100',
     marketplace: 'Marketplace100',
   },
+  {
+    profileId: 101,
+    accountId: 11,
+    country: 'Country101',
+    marketplace: 'Marketplace101',
+  },
+  {
+    profileId: 102,
+    accountId: 22,
+    country: 'Country102',
+    marketplace: 'Marketplace102',
+  },
 ];
 
 export const initialDataCampaings = [
@@ -121,4 +133,8 @@ export const initialDataCampaings = [
   { campaignId: 66, profileId: 66, clicks: 95, cost: 47, date: '2022-02-16' },
   { campaignId: 77, profileId: 77, clicks: 105, cost: 52, date: '2022-02-17' },
   { campaignId: 88, profileId: 88, clicks: 115, cost: 57, date: '2022-02-18' },
+  { campaignId: 99, profileId: 11, clicks: 110, cost: 55, date: '2022-02-19' },
+  { campaignId: 100, profileId: 11, clicks: 105, cost: 53, date: '2022-02-20' },
+  { campaignId: 101, profileId: 22, clicks: 95, cost: 48, date: '2022-02-21' },
+  { campaignId: 102, profileId: 22, clicks: 120, cost: 60, date: '2022-02-22' },
 ];
