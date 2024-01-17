@@ -4,7 +4,7 @@ import DefaultPage from '../../components/DefaultPage';
 import TableCustom from '../../components/TableCustom';
 import { columnsCampaign } from '../../data/columns';
 import { initialDataCampaings } from '../../data/initialData';
-import { Button } from 'react-bootstrap';
+import { Button, Form, FormControl, Row, Col } from 'react-bootstrap';
 import './Campaigns.scss';
 
 type Campaign = {
@@ -31,6 +31,8 @@ const Campaigns: FC = () => {
   const [sortedData, setSortedData] =
     useState<CampaignWithIndex[]>(initialDataCampaings);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const [minCost, setMinCost] = useState<number | ''>('');
+  const [maxCost, setMaxCost] = useState<number | ''>('');
 
   const handleSort = (property: string) => {
     const sorted = [...sortedData].sort((a, b) => {
@@ -54,12 +56,63 @@ const Campaigns: FC = () => {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
+  const handleFilter = () => {
+    const filtered = initialDataCampaings.filter((campaign) => {
+      const cost = campaign.cost;
+
+      if (minCost !== '' && cost < minCost) {
+        return false;
+      }
+
+      if (maxCost !== '' && cost > maxCost) {
+        return false;
+      }
+
+      return true;
+    });
+
+    setSortedData(filtered);
+  };
+
   const campaignData = sortedData.filter(
     (campaign) => campaign.profileId === parsedId
   );
 
   return (
     <DefaultPage title={`Campaigns of selected profile ${id}`}>
+      <Row className="mb-3">
+        <Col sm={2}>
+          <Form.Label className="mb-2">Filter by Cost:</Form.Label>
+        </Col>
+        <Col sm={4}>
+          <FormControl
+            placeholder="Min Cost"
+            value={minCost}
+            onChange={(e) =>
+              setMinCost(
+                e.target.value !== '' ? parseFloat(e.target.value) : ''
+              )
+            }
+            className="mb-2"
+          />
+        </Col>
+        <Col sm={4}>
+          <FormControl
+            placeholder="Max Cost"
+            value={maxCost}
+            onChange={(e) =>
+              setMaxCost(
+                e.target.value !== '' ? parseFloat(e.target.value) : ''
+              )
+            }
+            className="mb-2"
+          />
+        </Col>
+        <Col sm={2}>
+          <Button onClick={handleFilter}>Apply Filter</Button>
+        </Col>
+      </Row>
+
       <div className="campaigns__btn-sort--wrap">
         <Button
           className="campaigns__btn-sort"
