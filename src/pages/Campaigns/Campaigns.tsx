@@ -79,11 +79,12 @@ const Campaigns: FC = () => {
   );
 
   return (
-    <DefaultPage title={`Campaigns of selected profile ${id}`}>
+    <DefaultPage title={`Campaigns of selected profile id: ${id}`}>
       <Row className="mb-3">
         <Col sm={2}>
           <Form.Label className="mb-2">Filter by Cost:</Form.Label>
         </Col>
+
         <Col sm={4}>
           <FormControl
             placeholder="Min Cost"

@@ -17,7 +17,7 @@ const Profiles: FC = () => {
   );
 
   return (
-    <DefaultPage title={`Profiles of selected account ${id}`}>
+    <DefaultPage title={`Profiles of selected account id: ${id}`}>
       <TableCustom
         columns={columnsProfiles}
         data={data}
