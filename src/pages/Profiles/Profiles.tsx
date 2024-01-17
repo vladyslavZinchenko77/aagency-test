@@ -12,11 +12,9 @@ const Profiles: FC = () => {
     return <div>Failed to retrieve account ID</div>;
   }
 
-  const profileData = initialDataProfiles.find(
+  const data = initialDataProfiles.filter(
     (profile) => profile.accountId === parseInt(id)
   );
-
-  const data = profileData ? [profileData] : [];
 
   return (
     <DefaultPage title={`Profiles of selected account ${id}`}>
