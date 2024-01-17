@@ -20,7 +20,11 @@ const Campaigns: FC = () => {
 
   return (
     <DefaultPage title={`Campaigns of selected profile ${id}`}>
-      <TableCustom columns={columnsCampaign} data={campaignData} />
+      <TableCustom
+        columns={columnsCampaign}
+        data={campaignData}
+        isClicableRow={false}
+      />
     </DefaultPage>
   );
 };

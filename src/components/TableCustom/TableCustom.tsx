@@ -12,9 +12,15 @@ interface TableCustomProps {
   columns: Column[];
   data: any[];
   path?: string;
+  isClicableRow: boolean;
 }
 
-const TableCustom: FC<TableCustomProps> = ({ columns, data, path }) => {
+const TableCustom: FC<TableCustomProps> = ({
+  columns,
+  data,
+  path,
+  isClicableRow,
+}) => {
   const navigate = useNavigate();
 
   const handleRowClick = (item: any) => {
@@ -32,7 +38,10 @@ const TableCustom: FC<TableCustomProps> = ({ columns, data, path }) => {
       </thead>
       <tbody>
         {data.map((item, index) => (
-          <tr key={index} onClick={() => handleRowClick(item)}>
+          <tr
+            key={index}
+            onClick={isClicableRow ? () => handleRowClick(item) : undefined}
+          >
             {columns.map((column) => (
               <td key={column.key}>{column.render(item)}</td>
             ))}
