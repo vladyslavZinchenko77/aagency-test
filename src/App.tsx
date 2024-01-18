@@ -1,25 +1,28 @@
-import { FC } from 'react';
+import { FC, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Accounts from './pages/Accounts';
-import Campaigns from './pages/Campaigns';
-import Profiles from './pages/Profiles';
 import Footer from './components/Footer';
+
+const LazyAccounts = lazy(() => import('./pages/Accounts'));
+const LazyCampaigns = lazy(() => import('./pages/Campaigns'));
+const LazyProfiles = lazy(() => import('./pages/Profiles'));
 
 const App: FC = () => {
   return (
     <>
       <Header />
       <main>
-        <Routes>
-          <Route index element={<Accounts />} path="/" />
-          <Route element={<Accounts />} path="home" />
-          <Route element={<Profiles />} path="profile/:id" />
-          <Route
-            element={<Campaigns />}
-            path="profile/:id/profile/campaign/:id"
-          />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route index element={<LazyAccounts />} path="/" />
+            <Route element={<LazyAccounts />} path="home" />
+            <Route element={<LazyProfiles />} path="profile/:id" />
+            <Route
+              element={<LazyCampaigns />}
+              path="profile/:id/profile/campaign/:id"
+            />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>
